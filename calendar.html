@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canledar</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/default.date.css"/>
+    <link rel="stylesheet" href="css/default.css"/>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/picker.js"></script>
+    <script src="js/picker.date.js"></script>
+    <script src="js/legacy.js"></script>
+    <script src="js/test.js"></script>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>日期</legend>
+            <input type="text" class="datepicker"/>
+            <div class="container"></div>
+        </fieldset>
+    </form>
+    <button>选择日期</button>
+</body>
+</html>
+<style>
+    .container{width:300px;}
+</style>
+<script>
+    var $input=$(".datepicker").pickadate({
+        formatSubmit:'yyyy/mm/dd',
+        container:'.container',
+        closeOnselect:false,
+        closeOnClear:false,
+    })
+    var picker = $input.pickadate('picker');
+    $("button").click(function(event){
+        event.stopPropagation();
+        if(!picker.opened){
+            picker.open();
+        }else{
+            picker.close();
+            alert("close");
+        }
+        var datesToDisable = [ 1, 4, 7, [2015,3,8], [2015,3,19], new Date(2015,3,26) ];
+        picker.get('enable');
+        console.log(picker.get("id"));
+        /*console.log(picker.get('value'));
+           返回值形式：15 February, 2016
+        */
+        console.log(picker.get('select'));
+        /*返回值形式：Object {year: 2015, month: 8, date: 18, day: 5, obj: Fri Sep 18 2015 00:00:00 GMT+0800 (中国标准时间)…}*/
+    });
+
+</script>

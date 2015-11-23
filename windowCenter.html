@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="div" style="width: 600px;height: 600px;background: palegreen"></div>
+</body>
+</html>
+<script>
+    /*method1  position=absolute*/
+    /*var div=document.getElementById("div");
+    var x=window.pageXOffset+(window.innerWidth-div.clientWidth)/2;
+    var y=window.pageYOffset+(window.innerHeight-div.clientHeight)/2;
+    div.style.position="absolute";
+    div.style.top=y+"px";
+    div.style.left=x+"px";*/
+    /*method2  position=fixed*/
+    var div=document.getElementById("div");
+    var x=(window.innerWidth-div.clientWidth)/2+"px";
+    var y=(window.innerHeight-div.clientHeight)/2+"px"
+    div.style.position="fixed";
+    div.style.top=y;
+    div.style.left=x;
+</script>

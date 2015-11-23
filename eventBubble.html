@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event bubble</title>
+    <script type="application/javascript" src="js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+ <button class="btn">button</button>
+ <div class="pannel">
+    <button class="ok">ok</button>
+    <button class="no">no</button>
+ </div>
+</body>
+</html>
+<style>
+    body{background-color: aqua;padding: 20px;}
+    button{background-color: plum;padding: 7px}
+    .pannel{background-color: #ececec;padding: 20px;margin: 20px;width: 200px;display: none;}
+</style>
+<script>
+    $(function(){
+        /*$("body").click(function(){
+            alert("点击body");
+
+        });
+        $(".btn").click(function(event){
+             alert("点击按钮");
+            event.stopPropagation();
+        });*/
+        $(document).keydown(function(event){
+            if((event.keyCode)==13){
+                $("button").text("登陆中...")
+            }
+        });
+    })
+</script>

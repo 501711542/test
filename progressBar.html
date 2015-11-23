@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<div class="box">
+    <div class="bar"></div>
+</div>
+</body>
+</html>
+<style>
+    .box {width: 200px;overflow: hidden;border: 1px solid #ececec;border-radius: 20px;}
+    .bar{background-color: #48a1ff;width: 0px;height: 20px;}
+</style>
+<script>
+    $(function(){
+        progressBar();
+    })
+    function progressBar(){
+        var box=$(".box");
+        var bar=$(".bar");
+        var total_W=box.css("width");
+        var bar_W="0px";
+        var totalTime=60;
+        var timerID=setInterval(function(){
+            if(bar_W==total_W){
+                clearInterval(timerID);
+            }
+            bar_W=parseInt(bar_W.substring(0,bar_W.length-2))+Math.ceil(parseInt(total_W.substring(0,total_W.length-2))/totalTime)+"px";
+            bar.animate({width:bar_W},"slow");
+        },1000)
+
+    }
+</script>

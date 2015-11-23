@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body >
+<div onclick="test()">
+baby
+</div>
+<ul>
+    <li><a href="#" id="1">1</a></li>
+    <li><a href="#"  id="2">2</a></li>
+</ul>
+<a href="http://www.baidu.com"></a>
+<div id="myBtn">点击</div>
+<form>
+    <input type="text" required>
+    <input type="email" required>
+    <input type="url" required>
+    <input type="number" min="0" max="10" step="2">
+    <input type="submit" formnovalidate>
+</form>
+<select>
+    <option>1</option>
+    <option selected>2</option>
+    <option>3</option>
+</select>
+<div contenteditable="true">内容可编辑true</div>
+<div contenteditable="false">内容可编辑false</div>
+<script>
+   var myBtn=document.getElementById("myBtn");
+    myBtn.onclick=test;
+   var myA=document.getElementsByTagName("a");
+    function test(){
+        alert(this.id);
+        var ele=event;
+    }
+
+    var text=document.getElementsByTagName("option")[0];
+    text.onchange=test;
+</script>
+</body>
+</html>

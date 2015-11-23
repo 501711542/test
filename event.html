@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="test">click me</div>
+</body>
+</html>
+<script>
+    var myDiv=document.getElementsByTagName("div")[0];
+    var myBody=document.getElementsByTagName("body")[0];
+    /*myDiv.onclick=function(e){
+       alert("div");
+        e.stopPropagation();
+    }
+    myBody.onclick=function(){
+        alert("body");
+    }*/
+    myDiv.addEventListener("click",divTest);//第三个参数为true的时候，事件捕获
+    myBody.addEventListener("click",bodyTest);
+    function divTest(){
+        alert("click div");
+    }
+    function bodyTest(){
+       alert("click body");
+    }
+    //myBody.removeEventListener("click",bodyTest);
+</script>

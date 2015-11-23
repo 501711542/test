@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+
+<div class="pics">
+    <ul>
+        <li>1<a href="#"><img src="images/index_11.jpg"/></a></li>
+        <li>2<a href="#"><img src="images/index_12.jpg"/></a></li>
+        <li>3<a href="#"><img src="images/index_13.jpg"/></a></li>
+    </ul>
+</div>
+
+</body>
+</html>
+<style>
+    *{margin: 0px;padding: 0px;}
+    li{list-style: none;}
+    body{overflow-x: hidden;font-size: 14px;font-family: monospace;}
+    a{text-decoration: none;color: #000;}
+    img{vertical-align: bottom;}
+    .pics{width: 9999px;position: relative}
+    .pics li{float: left}
+</style>
+<script>
+    $(function(){
+        setTimeout(method,100);
+    })
+    function method(){
+        var pics=$(".pics");
+        var $ul=pics.find("ul");
+        var $li=$ul.find("li").eq(0);
+        var width=$li.css("width");
+        $(document).keydown(function(){
+            $li=$ul.find("li").eq(0);
+            $ul.append($li);
+        });
+    }
+</script>

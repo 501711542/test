@@ -1,0 +1,20 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}
+table{border-collapse:collapse;border-spacing:0}
+img{border:0}
+ol,ul{list-style:none}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:400}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;*font-size:100%;color:#636363}
+.clearfix:before, .clearfix:after {content:"";display:table}.clearfix:after{clear:both}.clearfix{*zoom:1}
+.fl{float:left;}.fr{float:right;}
+body{color:#454545;font:13px/1.5 'Microsoft Yahei',Tahoma,Helvetica,Arial,"\5b8b\4f53",sans-serif;position:relative;min-width:1005px}
+a{color:#666;text-decoration:none;-webkit-transition:color 500 linear}
+a:hover{text-decoration:none;color:#da0000;cursor:pointer;transition:color .1s linear}
+a:focus,input:focus{outline:none}
+a{noFocusLine:expression(this.onFocus=this.blur());}
+.clear{clear:both}
+
+.topPannel{height: 50px;background-color: #f4f4f4;line-height:50px;font-size:14px}
+.layout{width:1005px;margin:0 auto;position:relative;}
+
+
+

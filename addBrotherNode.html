@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>为元素增加子节点/兄弟节点</title>
+    <script type="application/javascript" src="js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<div class="box">
+    <button class="btn1">btn1</button>
+    <button class="btn2">btn2</button>
+    <div class="blockElement">
+        <p>I am a block element</p>
+    </div>
+</div>
+
+</body>
+</html>
+<script>
+    $(function(){
+        addBrother();
+        addChild();
+    })
+    function addBrother(){
+        $(".btn1").click(function(){
+            var _this=$(this);
+           _this.after('<span>我是'+_this.attr("class")+'</span>');
+            $('<span>我是'+_this.attr("class")+'</span>').insertAfter(_this);
+        });
+    }
+    function addChild(){
+        $(".blockElement").click(function(){
+            var _this=$(this);
+            _this.append('<p>i am a child of div</p>');
+            $('<p>i am a child of div</p>').appendTo(_this);
+        });
+    }
+</script>

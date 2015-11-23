@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dom</title>
+</head>
+<body>
+ <div id="baby">dom</div>
+<ul>
+    <li>li1</li>
+    <li>li2</li>
+    <li>li3</li>
+</ul>
+<ul id="ul2"><li></li><li></li></ul><!--childNodes.lenght=2没有空白文本-->
+<div>
+    <input type="text">
+</div>
+<div class="fontRed background" id="classTest">h5 class's function and attributins test whiic is new add</div>
+<div id="selfAttr" self1="self1" data-self="data-self">
+    h5 definedi element's attributions by self
+    <p>p</p>
+</div>
+
+</body>
+</html>
+<style>
+    .fontRed{color: red;}
+    .background{background-color: blue;float: left}
+</style>
+<script>
+    /*var element=document.getElementById("baby");
+    //alert(element.nodeType);
+    var textNode=document.createTextNode("textNode");
+    document.body.appendChild(textNode);
+    //alert(textNode.nodeName+":"+textNode.nodeValue)//nodename:#text   nodeValue:textNode
+    document.writeln("browor:"+document.implementation.hasFeature("xml","1.0"));
+    document.writeln("<strong>sjaoh</strong>");
+    var id=element.attributes;
+    document.write();
+    var newDiv=document.createElement('div');
+    document.body.appendChild(newDiv);
+    var radio1=document.createElement("input");
+    radio1.type="radio";
+    radio1.name="test";
+    var radio2=document.createElement("input");
+    radio2.type="radio";
+    radio2.name="test";
+    document.body.appendChild(radio1);
+    document.body.appendChild(radio2);
+    var ul=document.getElementsByTagName("ul")[0];
+    var ulChilds=ul.childNodes;
+    document.writeln("ul's childNode num:"+ulChilds.length);//为啥就是：7（3个li元素4个文本节点--表示li元素之间的空白符）*/
+   /* /!*====================动态创建表格====================================*!/
+    var table=document.createElement("table");
+    var tr='';
+    var td='';
+    var text='';
+    for(var i=0;i<3;i++){
+        tr=document.createElement("tr");
+        table.appendChild(tr);
+        for(var j=0;j<4;j++){
+            td=document.createElement("td");
+            td.innerText="cell"+i+j;
+            tr.appendChild(td)
+        }
+    }
+    document.body.appendChild(table);*/
+    /*====================NodeList的迭代使用====================================*/
+   /* var divs=document.getElementsByTagName("div"), i,div,len;
+    len=divs.length;
+    for(i=0;i<len;i++){
+        div=document.createElement("div");
+        div.innerText="baby"+i;
+        document.body.appendChild(div);
+    }*/
+    /*====================选择API====================================*/
+    /*var ul2=document.querySelectorAll("ul");
+    document.writeln(ul2.length);//2 nodeList
+    ul2=document.querySelector("#ul2");
+    document.writeln(ul2.id);//ul2*/
+    /*====================h5中关于class的一些方法和属性====================================*/
+  /* var div=document.getElementById("classTest");
+    //alert(div.classList.contains("fontRed"));//true
+    div.addEventListener("click",function(){
+        div.classList.toggle("background");
+    })
+    var head=document.head;
+    alert(head)*/
+    /*====================h5自定义数据属性====================================*/
+    var div=document.getElementById("selfAttr");
+    document.writeln("self:"+div.self1);
+    document.writeln("data-self:"+div.dataset.self);
+    div.scrollIntoView();
+    var text=div.innerText||div.textContent;//text.content(兼容firefox)
+    document.write(text);
+    //div.style.float="right";
+</script>
